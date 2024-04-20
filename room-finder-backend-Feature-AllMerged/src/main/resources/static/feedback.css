@@ -1,0 +1,84 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+  }
+  .header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px;
+  }
+    .header-right {
+        display: flex;
+        align-items: center; /* Center vertically */
+    }
+    .material-symbols-outlined{
+      font-size:30px;
+    }
+  .container {
+    min-width: fit-content;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 30px 20px;
+  }
+  h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  h4 {
+    font-size: 16px;
+    color: #999;
+    margin-bottom: 20px;
+  }
+  .rating {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+  }
+  .rating i {
+    font-size: 24px;
+    color: #ddd;
+    cursor: pointer;
+  }
+  .cls-btn{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+  .rating label i.fa-star {
+      color: #ddd;
+      cursor: pointer;
+  }
+  .rating label.active i.fa-star-o, .rating label:hover ~ label i.fa-star-o {
+      color: #FFD700; /* Change color for selected stars */
+  }
+  #feedback {
+    resize: none;
+    width: 80%;
+    height: 150px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 14px;
+  }
+  button {
+    display: block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    background-color: #0761c1;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #1a89ff;
+  }
+  .fa-star:before {
+    content: "\f005";
+  }

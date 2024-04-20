@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIVUM Feedback Form</title>
+    <link rel="stylesheet" href="feedback.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="header">
+    <div class="header-left">
+        <h4>Your feedback makes us better.</h4>
+    </div>
+    <div class="header-right">
+        <h2 class="name">Surya R</h2>
+        <span class="material-symbols-outlined" fontSize="large" > person</span>
+    </div>
+</div>
+<div class="conList<MeetingEntity>tainer">
+       <form action="/processData" th:object="${}" method="post">
+           <div class="rating">
+               <span>Rate us:</span>
+               <label for="star-5" data-value="5"><i class="fa fa-star-o"></i></label>
+               <label for="star-4" data-value="4"><i class="fa fa-star-o"></i></label>
+               <label for="star-3" data-value="3"><i class="fa fa-star-o"></i></label>
+               <label for="star-2" data-value="2"><i class="fa fa-star-o"></i></label>
+               <label for="star-1" data-value="1"><i class="fa fa-star-o"></i></label>
+           </div>
+           <textarea id="feedback" name="feedback" placeholder="Feedback..."></textarea>
+           <input type="hidden" id="rating" name="rating" />
+           <div class="cls-btn">
+               <button type="submit" class="submit-btn">Submit</button>
+           </div>
+       </form>
+</div>
+<script src="https://kit.fontawesome.com/your-fontawesome-kit-code.js" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function() {
+       $('.rating label').click(function() {
+           // Remove active class from all labels
+           $('.rating label').removeClass('active');
+           // Add active class to clicked label and preceding labels
+           $(this).addClass('active');
+           $(this).prevAll('label').addClass('active');
+           // Get the rating value from the clicked label
+           var rating = $(this).attr('data-value');
+
+           // Update hidden input field with the rating value
+           $('#rating').val(rating);
+
+           // Output the rating value (you can store or process it as needed)
+           console.log('Selected rating: ' + rating);
+       });
+   });
+</script>
+</body>
+</html>
